@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://Allan:Allan1@devconnector.ocxhy.mongodb.net/<dbname>?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://Allan:Allan1@devconnector.ocxhy.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
 }
