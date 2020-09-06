@@ -1,5 +1,5 @@
 {
   "mongoURI": "mongodb+srv://Allan:Allan1@devconnector.ocxhy.mongodb.net/<dbname>?retryWrites=true&w=majority",
   "jwtSecret": "mysecrettoken",
-  "githubToken": "6e944a160be3900e71b202e5d6c6032ace5bff15"
+  "githubToken": "2a1262bbdce25e79a219e0507ffb5db44559cecd"
 }
