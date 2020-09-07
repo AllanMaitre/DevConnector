@@ -119,7 +119,7 @@ router.put('/like/:id', auth, async (req, res) => {
 
     await post.save();
 
-    res.json(post);
+    res.json(post.likes);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
@@ -150,7 +150,7 @@ router.put('/unlike/:id', auth, async (req, res) => {
 
     await post.save();
 
-    res.json(post);
+    res.json(post.likes);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
@@ -158,12 +158,13 @@ router.put('/unlike/:id', auth, async (req, res) => {
 });
 
 // @route   POST api/post/comment/:id
-// @desc    Comment to a post
+// @desc    Add comment to a post
 // @access  Private
 router.post(
   '/comment/:id',
   [auth, [check('text', 'Text is required').not().isEmpty()]],
   async (req, res) => {
+    console.log('passage cii');
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -186,7 +187,7 @@ router.post(
 
       post.comments.unshift(newCom);
       await post.save();
-      res.json(post);
+      res.json(post.comments);
     } catch (err) {
       console.error(err.message);
       res.status(500).send('Server Error');
